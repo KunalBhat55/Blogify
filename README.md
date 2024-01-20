@@ -44,4 +44,7 @@ This project is a full-stack blogging website built using React Vite as the fron
     ```
 4.  ```bash
     npm run dev
+    ```
+5.  ```bash
+    server started at localhost:3000
     ``` 
