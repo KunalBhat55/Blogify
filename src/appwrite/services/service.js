@@ -119,7 +119,8 @@ export class Service {
    
     try {
         await this.storage.deleteFile(config.appwriteBucketId, fileId);
-        return "File deleted successfully!";
+        return true;
+        // return "File deleted successfully!";
     } catch (error) {
         console.log(error)
     }

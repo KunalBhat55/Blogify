@@ -7,7 +7,7 @@ import parse from "html-react-parser";
 
 function Post() {
   const [post, setPost] = useState("null");
-  const { slug } = useParams();
+  const { slug } = useParams(); // get the slug from the url
   const navigate = useNavigate();
 
   const userData = useSelector((state) => state.auth.userData);
@@ -41,7 +41,7 @@ function Post() {
       .then((deleteStatus) => {
         if (deleteStatus) {
           appwriteService.deleteFile(post.featuredImage);
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((error) => {
