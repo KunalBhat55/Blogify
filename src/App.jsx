@@ -11,27 +11,27 @@ function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    authService
-      .getCurrentUser()
-      .then((userData) => {
-        if (userData) {
-          dispatch(login({ userData }));
-        } else {
-          dispatch(logout());
-        }
-      })
+  // useEffect(() => {
+  //   authService
+  //     .getCurrentUser()
+  //     .then((userData) => {
+  //       if (userData) {
+  //         dispatch(login({ userData }));
+  //       } else {
+  //         dispatch(logout());
+  //       }
+  //     })
 
-      .catch((error) => {
-        console.log(error);
-      })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     })
 
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, []);
 
-  if (loading) {
+  if (!loading) {
     return (
       <div className="flex h-screen justify-center items-center">
         <div className="text-2xl">
@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <div className="flex justify-center">
-        <div className="w-[55rem]">
+        <div className="w-[55rem] h-screen">
           <Header />
           <Outlet />
           <Footer />

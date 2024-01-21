@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-
-    <div className="flex max-w-fit justify-center items-end ">
-      <footer className="py-5 px-4 text-white flex flex-col gap-x-[5rem] items-start justify-center sm:flex-row">
+    <div className="grid">
+      <footer 
+      className="py-5 px-4 text-white grid md:grid-cols-4 grid-cols-2 gap-x-2">
         <div className="flex flex-col items-center mx-1 p-3 mb-4 sm:mb-0">
           <h4 className="text-2xl font-bold mb-2">Company</h4>
           <ul className="list-unstyled space-y-2">
@@ -28,7 +28,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center mb-4 m-1 p-3 sm:mb-0">
+        <div className="flex flex-col items-center mb-4 mr-6 p-3 sm:mb-0">
           <h4 className="text-2xl font-bold mb-2 mr-2">Product</h4>
           <ul className="list-unstyled space-y-2">
             <li>

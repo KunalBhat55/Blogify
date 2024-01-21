@@ -22,7 +22,7 @@ function AllPosts() {
   return (
     <div>
         <Container>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid ">
                 {posts.map((post) => (
                     <Postcard key={post.$id} {...post}/>
                 ))}

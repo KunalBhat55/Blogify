@@ -25,13 +25,13 @@ function Logout() {
   return isLoggedIn ? (
     <div>
       <button
-        className="btn btn-primary btn-md text-gray-200"
+        className="btn btn-primary btn-md m-3 text-gray-200"
         onClick={handleLogout}
       >
         Logout
       </button>
     </div>
-  ): "Login to continue"
+  ): "wdwd"
 }
 
 export default Logout;

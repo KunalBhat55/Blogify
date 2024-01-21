@@ -39,9 +39,6 @@ function Login() {
         const userData = await authService.getCurrentUser();
         console.log("User Data: ",userData)
         userData ? dispatch(authLogin(userData)) : setError("Error getting user data");
-        if(userData){
-          dispatch(authLogin(userData))
-        }
 
         navigate("/");
 

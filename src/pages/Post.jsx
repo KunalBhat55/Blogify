@@ -13,7 +13,7 @@ function Post() {
   const userData = useSelector((state) => state.auth.userData);
 
   const isAuthor = post && userData ? post.UserId === userData.$id : false; // check if the user is the author of the post
-
+  console.log("isAuthor: ", userData);
   useEffect(() => {
     if (slug) {
       console.log("Post slug:", slug);
