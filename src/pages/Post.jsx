@@ -80,7 +80,7 @@ function Post() {
           <div>
             <h1 className="text-2xl font-bold">{post.Title}</h1>
           </div>
-          <div>{post.content ? parse(post.content) : "No Content"}</div>
+          <div>{post.Content ? parse(post.Content) : "No Content"}</div>
         </div>
       </Container>
     </div>

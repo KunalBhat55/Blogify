@@ -14,7 +14,7 @@ const Input = React.forwardRef(function Input(
       <input
         id={id}
         type={type}
-        className={`input input-bordered w-full max-w-xs ${className}`}
+        className={`input input-md input-bordered w-full ${className}`}
         ref={ref}
         {...props}
       />

@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Postcard, Container } from "../components/index";
 import appwriteService from "../appwrite/services/service";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
+
+  const isAuthor = useSelector((state) => state.auth.status);
 
   useEffect(() => {
     appwriteService
@@ -13,6 +16,7 @@ function Home() {
       .then((res) => {
         if (res) {
           setPosts(res.documents);
+          console.log("Posts: ", res.documents);
         }
       })
       .catch((error) => {
@@ -20,7 +24,7 @@ function Home() {
       });
   }, []);
 
-  if (posts.length === 0) {
+  if (!isAuthor) {
     return (
       <div className="min-h-screen flex items-center justify-center text-white">
         <div className="text-center">
@@ -37,19 +41,19 @@ function Home() {
       </div>
     );
   }
-  return (
+  return posts ? (
     <div>
       <Container>
         <div>
-          <div className="grid grid-cols-3 gap-4">
-            {posts.map((post) => (
+          <div className="grid grid-cols-2">
+            {posts?.map((post) => (
               <Postcard key={post.$id} {...post} />
             ))}
           </div>
         </div>
       </Container>
     </div>
-  );
+  ): "Loading...";
 }
 
 export default Home;

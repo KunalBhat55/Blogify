@@ -53,21 +53,26 @@ function Login() {
 
   return (
     <div>
-      <div>
+
+      <div className="mb-24">
+
         <div className="flex justify-center">
           <img className="w-24 rounded-full" src={logo} alt="logo" />
         </div>
-        <div>
-          <h2 className="text-2xl font-bold text-center ">
+
+        <div className="m-4">
+          <h2 className="text-2xl font-bold text-center">
             Sign in to your account
           </h2>
         </div>
+
         {error && (
           <div className="text-red-500 text-xl font-medium text-center my-2">
             {error}
           </div>
         )}
-        <div className="flex justify-center">
+
+        <div className="flex justify-center w-full">
           {/*Form */}
           <form onSubmit={handleSubmit(login)}>
             <div className="m-1 p-1">
@@ -77,7 +82,7 @@ function Login() {
                 </span>
               )}
               <Input
-                className="mb-2 w-full"
+                className="mb-1"
                 placeholder="Email"
                 type="email"
                 {...register("email", {
@@ -97,6 +102,7 @@ function Login() {
               <Input
                 autoComplete="on"
                 placeholder="Password"
+                className="mb-1"
                 type="password"
                 {...register("password", {
                   required: "Password is required",
