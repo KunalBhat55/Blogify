@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Welcome() {
-  return (
+
+  const [isActivated, setIsActivated] = useState(false);
+
+  useEffect(() => {
+  
+    setIsActivated(true);
+  
+  }, []);
+
+
+
+
+  return isActivated ? (
     <div>
       <div className="flex items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white">
         <div className="text-center">
@@ -18,7 +31,7 @@ function Welcome() {
         </div>
       </div>
     </div>
-  );
+  ) : "Loading...";
 }
 
 export default Welcome;

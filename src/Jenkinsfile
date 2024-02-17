@@ -1,0 +1,28 @@
+// push to docker
+
+pipeline{
+
+  agent any 
+
+    stages{
+        stage("build"){
+         
+           steps{
+            sh "docker build -t blogpost ."
+           }
+        
+        }
+        stage("push"){
+            steps{
+                withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
+                    sh "echo $dockerhub | docker login -u $dockerhub --password-stdin"
+                    sh "docker tag blogpost $dockerhub/blogpost"
+                    sh "docker push $dockerhub/blogpost"
+                }
+            }
+        
+        }
+    }
+
+}
+

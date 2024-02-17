@@ -10,7 +10,7 @@ function Post() {
   const { slug } = useParams(); // get the slug from the url
   const navigate = useNavigate();
 
-  const userData = useSelector((state) => state.auth.userData);
+  const userData = useSelector((state) => state.auth.userData.userData);
 
   const isAuthor = post && userData ? post.UserId === userData.$id : false; // check if the user is the author of the post
   console.log("isAuthor: ", userData);
@@ -33,7 +33,6 @@ function Post() {
       navigate("/");
     }
   }, [slug, navigate]);
-
 
   const deletePost = () => {
     appwriteService

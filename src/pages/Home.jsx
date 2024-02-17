@@ -16,7 +16,6 @@ function Home() {
       .then((res) => {
         if (res) {
           setPosts(res.documents);
-          console.log("Posts: ", res.documents);
         }
       })
       .catch((error) => {

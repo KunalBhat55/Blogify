@@ -14,7 +14,6 @@ import {
   Signup,
   Post,
   EditPost,
-  Welcome
 } from "./pages/export.js";
 
 const router = createBrowserRouter([
@@ -24,13 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/home",
-        element: (
-          <AuthLayout authentication>
-            <Home />
-          </AuthLayout>
-        ),  
-        
-
+        element: <Home />,
       },
       {
         path: "/signin",

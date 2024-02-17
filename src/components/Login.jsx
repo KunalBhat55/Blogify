@@ -27,21 +27,19 @@ function Login() {
     setLoading(true);
 
     setTimeout(() => {
-     
       setLoading(false);
-      
     }, 1000);
 
     try {
       const session = await authService.login(data);
       if (session) {
-
         const userData = await authService.getCurrentUser();
-        console.log("User Data: ",userData)
-        userData ? dispatch(authLogin(userData)) : setError("Error getting user data");
+        console.log("User Data: ", userData);
+        userData
+          ? dispatch(authLogin(userData))
+          : setError("Error getting user data");
 
         navigate("/");
-
       } else {
         setError("email or password is incorrect");
       }
@@ -53,9 +51,7 @@ function Login() {
 
   return (
     <div>
-
       <div className="mb-24">
-
         <div className="flex justify-center">
           <img className="w-24 rounded-full" src={logo} alt="logo" />
         </div>

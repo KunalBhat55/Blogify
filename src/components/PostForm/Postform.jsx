@@ -56,8 +56,8 @@ function Postform({ post }) {
         console.log("Featured IMG:",data.featuredImage)
         console.log("PostForm userID:",userData.$id)
         const dbPost = await appwriteService.createPost({
-          ...data,
-          UserId: userData.$id,
+          ...data, 
+          UserId: userData.userData.$id,
         });
 
         if (dbPost) {
