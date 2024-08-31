@@ -16,47 +16,27 @@ import {
   EditPost,
 } from "./pages/export.js";
 
-const router = createBrowserRouter([
+const routes = [
   {
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/signin",
-        element: <Signin />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
-        path: "/allposts",
-        element: <AllPosts />,
-      },
-      {
-        path: "/editpost/:slug",
-        element: <EditPost />,
-      },
-      {
-        path: "/addpost",
-        element: <AddPost />,
-      },
-      {
-        path: "/post/:slug",
-        element: <Post />,
-      },
+      { path: "home", element: <Home /> },
+      { path: "signin", element: <Signin /> },
+      { path: "signup", element: <Signup /> },
+      { path: "allposts", element: <AllPosts /> },
+      { path: "editpost/:slug", element: <EditPost /> },
+      { path: "addpost", element: <AddPost /> },
+      { path: "post/:slug", element: <Post /> },
     ],
   },
   {
     path: "*",
     element: <ErrorPage />,
   },
-  {},
-]);
+];
+
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

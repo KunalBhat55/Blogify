@@ -115,12 +115,12 @@ function Postform({ post }) {
                 });
               }}
             />
-            <RTE
+            {/* <RTE
               name="content"
               label="Content"
               control={control}
               defaultValue={getValues("Content")}
-            />
+            /> */}
           </div>
           <div>
             <Input
